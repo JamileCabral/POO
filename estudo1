@@ -1,0 +1,23 @@
+class salaAula:
+    def __init__(self, qtd_alunos, conteudo, capacidade_sala):
+        self.qtd_alunos = qtd_alunos
+        self.conteudo = conteudo
+        self.capacidade_sala = capacidade_sala
+
+
+    def entrarAluno(self, qtd_entrar):
+        if qtd_entrar + self.qtd_alunos < self.capacidade_sala:
+            self.qtd_alunos += qtd_entrar
+            print(f'Quantidade de alunos: {self.qtd_alunos}')
+        else:
+            print('A sala está na sua capacidade máxima.')
+
+    def sairAluno(self):
+        if self.qtd_alunos <= 0:
+            print('Impossível sair, a sala está vazia!')
+        else:
+
+            print('A saída do aluno está liberada.')
+
+salaDeAula = salaAula(0, 'POO', 20)
+print(f'O conteúdo da aula será {salaDeAula.conteudo}')
